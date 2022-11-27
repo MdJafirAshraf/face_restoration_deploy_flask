@@ -10,6 +10,6 @@ numpy
 opencv-python
 pyyaml
 scipy
-tb-nightly==2.12.0a20221124
+tb-nightly
 tqdm
 yapf
