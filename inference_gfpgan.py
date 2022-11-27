@@ -3,7 +3,6 @@ import cv2
 import glob
 import numpy as np
 import os
-import torch
 from basicsr.utils import imwrite
 
 from gfpgan import GFPGANer
@@ -58,23 +57,18 @@ def start():
     os.makedirs(output_path, exist_ok=True)
 
     # ------------------------ set up background upsampler ------------------------
-    if not torch.cuda.is_available():  # CPU
-        import warnings
-        warnings.warn('The unoptimized RealESRGAN is slow on CPU. We do not use it. '
-                      'If you really want to use it, please modify the corresponding codes.')
-        bg_upsampler = None
-    else:
-        from basicsr.archs.rrdbnet_arch import RRDBNet
-        from realesrgan import RealESRGANer
-        model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=2)
-        bg_upsampler = RealESRGANer(
-            scale=2,
-            model_path='https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth',
-            model=model,
-            tile=args.bg_tile,
-            tile_pad=10,
-            pre_pad=0,
-            half=True)  # need to set False in CPU mode
+
+    from basicsr.archs.rrdbnet_arch import RRDBNet
+    from realesrgan import RealESRGANer
+    model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=2)
+    bg_upsampler = RealESRGANer(
+        scale=2,
+        model_path='https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth',
+        model=model,
+        tile=args.bg_tile,
+        tile_pad=10,
+        pre_pad=0,
+        half=True)  # need to set False in CPU mode
 
 
     # ------------------------ set up GFPGAN restorer ------------------------
