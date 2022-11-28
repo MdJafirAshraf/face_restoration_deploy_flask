@@ -9,6 +9,13 @@ Source: <a href="https://github.com/TencentARC/GFPGAN">Official Link</a>
 
 ## Installation
 
+First, you need to **clone the repo**.
+```
+git clone https://github.com/JafirDon/face_restoration_deploy_flask.git
+cd face_restoration_deploy_flask
+```
+
+
 Install dependent packages. run the following command
 
 ```
@@ -22,7 +29,7 @@ python setup.py develop
 pip install realesrgan
 ```
 
-If you run on the flask, run the following command.
+If you run on the **Flask-Ngrok**, run the following command.
 
 ```
 pip install pyngrok==4.1.1
