@@ -51,7 +51,9 @@ To run the code
 python run.py
 ```
 
-
+## Tutorial
+- Google-colab-tutorial: <a href="https://github.com/JafirDon/face_restoration_deploy_flask/blob/main/GFPGAN_Deploy_on_Flask.ipynb">Colab Notebook Link</a>
+- Blog: Coming Soon
 
 ## License
 MIT License
