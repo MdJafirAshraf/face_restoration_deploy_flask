@@ -55,9 +55,14 @@ python run.py
 - Google-colab-tutorial: <a href="https://github.com/JafirDon/face_restoration_deploy_flask/blob/main/GFPGAN_Deploy_on_Flask.ipynb">Colab Notebook Link</a>
 - Blog: Coming Soon
 
+
+## Demo
+<img src='https://github.com/JafirDon/face_restoration_deploy_flask/blob/main/demo.gif' width="50%" ></img> <br><br>
+
+
 ## License
 MIT License
-<br>
+
 <br>
 
 ### Thank you
